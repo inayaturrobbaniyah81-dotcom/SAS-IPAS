@@ -208,7 +208,7 @@ export const Stage3Result: React.FC<Stage3ResultProps> = ({
               Data Anda telah tersinkronisasi ke Google Spreadsheet sekolah.
             </p>
             <p className="mt-0.5 text-blue-800">
-              Anda dapat mengunduh lembar hasil tes resmi dalam bentuk PDF di bawah ini. Lembar ini memuat kolom tanda tangan resmi Guru Kelas VI ({CONFIG.GURU}) dan Orang Tua/Wali Murid.
+              Anda dapat mengunduh lembar hasil tes resmi dalam bentuk PDF di bawah ini. Lembar ini memuat kolom tanda tangan resmi Guru Kelas {CONFIG.KELAS} ({CONFIG.GURU}) dan Orang Tua/Wali Murid.
             </p>
           </div>
         </div>
@@ -261,6 +261,16 @@ export const Stage3Result: React.FC<Stage3ResultProps> = ({
                       Kunci: {Array.isArray(q.correctAnswer) ? q.correctAnswer.join(', ') : q.correctAnswer || 'Sesuai Kategori'}
                     </span>
                   </div>
+                  {q.imageUrl && (
+                    <div className="my-2 flex flex-col items-center bg-white p-2 rounded-lg border border-slate-200">
+                      <img
+                        src={q.imageUrl}
+                        alt={q.imageAlt || `Ilustrasi soal ${idx + 1}`}
+                        referrerPolicy="no-referrer"
+                        className="max-h-48 w-auto rounded object-contain"
+                      />
+                    </div>
+                  )}
                   <p className="text-slate-800">{q.text}</p>
                   <div className="p-2.5 rounded bg-blue-50/70 border border-blue-100 text-slate-700">
                     <span className="font-bold text-blue-900 block mb-0.5">Pembahasan:</span>

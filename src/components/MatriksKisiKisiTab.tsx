@@ -6,6 +6,7 @@ import {
   getCognitiveLevelLabel,
 } from '../data/blueprintData';
 import { downloadKisiKisiPDF } from '../utils/pdfGenerator';
+import { CONFIG } from '../config';
 import {
   FileText,
   Download,
@@ -153,7 +154,7 @@ export const MatriksKisiKisiTab: React.FC<MatriksKisiKisiTabProps> = ({ question
             </div>
           </div>
           <span className="text-[11px] text-slate-400 mt-3 pt-2 border-t border-slate-100 block">
-            Capaian Pembelajaran Matematika Fase C
+            Capaian Pembelajaran IPAS Fase C
           </span>
         </div>
 
@@ -278,6 +279,26 @@ export const MatriksKisiKisiTab: React.FC<MatriksKisiKisiTabProps> = ({ question
             18 PG Tunggal • 3 PGK • 9 PGK Kategori (B/S)
           </span>
         </div>
+      </div>
+
+      {/* ACUAN KKTP PER BAB IPAS */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+        {CONFIG.KKTP_CHAPTERS.map((ch) => (
+          <div
+            key={ch.bab}
+            className="bg-emerald-50/60 border border-emerald-200 rounded-2xl p-4 space-y-1"
+          >
+            <div className="flex items-center justify-between">
+              <span className="text-xs font-extrabold text-emerald-900">
+                {ch.bab}: {ch.judul}
+              </span>
+              <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-emerald-100 text-emerald-800">
+                KKTP
+              </span>
+            </div>
+            <p className="text-[11px] text-emerald-900/90 leading-relaxed">{ch.kktp}</p>
+          </div>
+        ))}
       </div>
 
       {/* FILTER & PENCARIAN KISI-KISI */}

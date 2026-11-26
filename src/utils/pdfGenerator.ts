@@ -199,8 +199,8 @@ export function downloadStudentResultPDF(result: ExamResult): void {
   doc.setFont('helvetica', 'italic');
   doc.setFontSize(9);
   const note = isPass
-    ? 'Selamat atas pencapaian yang memuaskan. Tingkatkan terus semangat belajar dan ketelitian dalam menyelesaikan soal matematika.'
-    : 'Perlu bimbingan dan pengulangan materi terutama pada konsep soal kompleks dan pemecahan masalah (remedial). Tetap semangat belajar.';
+    ? 'Selamat atas pencapaian yang memuaskan. Tingkatkan terus semangat belajar dan ketelitian dalam memahami konsep IPAS.'
+    : 'Perlu bimbingan dan pengulangan materi terutama pada pemahaman konsep sistem tubuh, lingkungan, dan sejarah perjuangan (remedial). Tetap semangat belajar.';
   doc.text(note, 15, y, { maxWidth: pageWidth - 30 });
   y += 16;
 
@@ -235,7 +235,7 @@ export function downloadStudentResultPDF(result: ExamResult): void {
   doc.line(colRight, lineY, colRight + 48, lineY);
   doc.setFont('helvetica', 'normal');
   doc.setFontSize(8.5);
-  doc.text(`NIP. ${CONFIG.NIP_GURU}`, colRight, lineY + 4);
+  doc.text(`${CONFIG.NIP_GURU_LABEL}. ${CONFIG.NIP_GURU}`, colRight, lineY + 4);
 
   // Simpan PDF
   const safeName = (result.nama || 'siswa').replace(/[^a-zA-Z0-9]/g, '_');
@@ -269,7 +269,7 @@ export function downloadExamQuestionsPDF(questions: Question[]): void {
     doc.setFontSize(8);
     doc.setTextColor(120, 120, 120);
     doc.text(
-      `${CONFIG.SEKOLAH} | Naskah Soal Tes Sumatif Matematika Kelas VI`,
+      `${CONFIG.SEKOLAH} | Naskah Soal Tes Sumatif ${CONFIG.MATA_PELAJARAN} Kelas ${CONFIG.KELAS}`,
       pageWidth / 2,
       9,
       { align: 'center' }
@@ -336,6 +336,22 @@ export function downloadExamQuestionsPDF(questions: Question[]): void {
     doc.setTextColor(0, 0, 0);
     y += 5;
 
+    // Keterangan Gambar Stimulus (jika soal memiliki gambar)
+    if (q.imageUrl) {
+      checkPageBreak(8);
+      doc.setFont('helvetica', 'italic');
+      doc.setFontSize(8.5);
+      doc.setTextColor(71, 85, 105);
+      doc.text(
+        `[Ilustrasi Gambar: ${q.imageCaption || q.imageAlt || 'Tersedia pada tampilan ujian digital'}]`,
+        16,
+        y
+      );
+      doc.setTextColor(0, 0, 0);
+      doc.setFontSize(9.5);
+      y += 4.5;
+    }
+
     // Teks Soal
     doc.setFont('helvetica', 'normal');
     const textLines = doc.splitTextToSize(q.text, pageWidth - 32);
@@ -369,7 +385,7 @@ export function downloadExamQuestionsPDF(questions: Question[]): void {
     }
   });
 
-  doc.save(`Naskah_Soal_Matematika_Kelas_VI_${CONFIG.SEKOLAH.replace(/[^a-zA-Z0-9]/g, '_')}.pdf`);
+  doc.save(`Naskah_Soal_IPAS_Kelas_VI_${CONFIG.SEKOLAH.replace(/[^a-zA-Z0-9]/g, '_')}.pdf`);
 }
 
 /**
@@ -673,7 +689,7 @@ export function downloadResultsRecapPDF(results: ExamResult[]): void {
   doc.line(colRightX, sigLineY + 1, colRightX + 50, sigLineY + 1);
   doc.setFont('helvetica', 'normal');
   doc.setFontSize(8);
-  doc.text(`NIP. ${CONFIG.NIP_GURU}`, colRightX, sigLineY + 5);
+  doc.text(`${CONFIG.NIP_GURU_LABEL}. ${CONFIG.NIP_GURU}`, colRightX, sigLineY + 5);
 
   // --- FOOTER DI SETIAP HALAMAN ---
   const totalPages = doc.getNumberOfPages();
@@ -692,7 +708,7 @@ export function downloadResultsRecapPDF(results: ExamResult[]): void {
     });
   }
 
-  doc.save(`Rekap_Nilai_Tes_Sumatif_Matematika_Kelas_${CONFIG.KELAS}.pdf`);
+  doc.save(`Rekap_Nilai_Tes_Sumatif_IPAS_Kelas_${CONFIG.KELAS}.pdf`);
 }
 
 /**
@@ -927,7 +943,7 @@ export function downloadKisiKisiPDF(questions: Question[]): void {
   doc.line(colRightX, sigLineY + 1, colRightX + 55, sigLineY + 1);
   doc.setFont('helvetica', 'normal');
   doc.setFontSize(8);
-  doc.text(`NIP. ${CONFIG.NIP_GURU}`, colRightX, sigLineY + 5);
+  doc.text(`${CONFIG.NIP_GURU_LABEL}. ${CONFIG.NIP_GURU}`, colRightX, sigLineY + 5);
 
   // --- FOOTER DI SETIAP HALAMAN ---
   const totalPages = doc.getNumberOfPages();
@@ -946,7 +962,7 @@ export function downloadKisiKisiPDF(questions: Question[]): void {
     });
   }
 
-  doc.save(`Kisi_Kisi_Soal_Matematika_Kelas_${CONFIG.KELAS}.pdf`);
+  doc.save(`Kisi_Kisi_Soal_IPAS_Kelas_${CONFIG.KELAS}.pdf`);
 }
 
 /**
@@ -1248,7 +1264,7 @@ export function downloadAnalisisButirPDF(results: ExamResult[], questions: Quest
   doc.line(colRightX, sigLineY + 1, colRightX + 55, sigLineY + 1);
   doc.setFont('helvetica', 'normal');
   doc.setFontSize(8);
-  doc.text(`NIP. ${CONFIG.NIP_GURU}`, colRightX, sigLineY + 5);
+  doc.text(`${CONFIG.NIP_GURU_LABEL}. ${CONFIG.NIP_GURU}`, colRightX, sigLineY + 5);
 
   // --- FOOTER DI SETIAP HALAMAN ---
   const totalPages = doc.getNumberOfPages();
@@ -1267,6 +1283,6 @@ export function downloadAnalisisButirPDF(results: ExamResult[], questions: Quest
     });
   }
 
-  doc.save(`Analisis_Butir_Soal_Matematika_Kelas_${CONFIG.KELAS}.pdf`);
+  doc.save(`Analisis_Butir_Soal_IPAS_Kelas_${CONFIG.KELAS}.pdf`);
 }
 

@@ -99,10 +99,10 @@ export const Stage1Identity: React.FC<Stage1IdentityProps> = ({
       {/* Header Pengumuman Tes */}
       <div className="text-center mb-8">
         <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-          Tes Sumatif Matematika Kelas {CONFIG.KELAS}
+          Tes Sumatif {CONFIG.MATA_PELAJARAN} Kelas {CONFIG.KELAS}
         </h2>
-        <p className="mt-2 text-sm text-slate-600 max-w-xl mx-auto">
-          Materi Pokok: <span className="font-semibold text-slate-800">{CONFIG.MATERI}</span>.
+        <p className="mt-2 text-sm text-slate-600 max-w-2xl mx-auto">
+          Lingkup Materi: <span className="font-semibold text-slate-800">{CONFIG.MATERI}</span>.
           Silakan lengkapi identitas Anda dengan benar sebelum memulai pengerjaan soal.
         </p>
       </div>
@@ -297,6 +297,25 @@ export const Stage1Identity: React.FC<Stage1IdentityProps> = ({
                 <CheckCircle2 className="w-3.5 h-3.5 text-blue-400 shrink-0 mt-0.5" />
                 <span>Seluruh 30 soal wajib dijawab sebelum jawaban dapat dikirimkan ke server.</span>
               </p>
+            </div>
+          </div>
+
+          {/* Card Lingkup Materi & KKTP IPAS */}
+          <div className="bg-white rounded-2xl p-4 sm:p-5 shadow-xs border border-slate-200 space-y-2.5">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-blue-700">
+              Lingkup Materi &amp; KKTP IPAS
+            </h4>
+            <div className="space-y-2 text-[11px]">
+              {CONFIG.KKTP_CHAPTERS.map((ch) => (
+                <div key={ch.bab} className="p-2.5 rounded-xl bg-slate-50 border border-slate-200">
+                  <div className="font-bold text-slate-900">
+                    {ch.bab}. {ch.judul}
+                  </div>
+                  <div className="text-slate-600 mt-0.5 leading-relaxed">
+                    <span className="font-semibold text-emerald-700">KKTP:</span> {ch.kktp}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
 

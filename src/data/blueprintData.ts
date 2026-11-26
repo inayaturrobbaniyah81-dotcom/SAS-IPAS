@@ -2,7 +2,8 @@ import { Question, QuestionBlueprint, CognitiveLevel, Difficulty } from '../type
 
 /**
  * Data Acuan Matriks Kisi-Kisi Penulisan Soal Tes Sumatif
- * Kurikulum Merdeka - Fase C (Kelas VI) Mata Pelajaran Matematika
+ * Kurikulum Merdeka - Fase C (Kelas VI) Mata Pelajaran IPAS
+ * Lingkup Materi: Bab 1, Bab 2, dan Bab 3
  */
 
 export interface BlueprintDefinition {
@@ -13,275 +14,284 @@ export interface BlueprintDefinition {
   bobotSkor: number;
 }
 
-// Peta acuan default 30 butir soal Kurikulum Merdeka
+// Peta acuan default 30 butir soal IPAS Kelas VI Kurikulum Merdeka
 export const DEFAULT_BLUEPRINT_MAP: Record<number, BlueprintDefinition> = {
+  // BAB 1 (PG: 1-6)
   1: {
-    elemen: 'Bilangan',
+    elemen: 'Bab 1: Pencernaan & Gizi',
     tujuanPembelajaran:
-      'Peserta didik dapat menyelesaikan masalah operasi hitung bilangan bulat negatif dan positif dalam kehidupan sehari-hari.',
+      'Memahami, menganalisis, dan menerapkan konsep sistem pencernaan serta pola hidup sehat.',
     indikatorSoal:
-      'Disajikan narasi perubahan suhu es yang dipanaskan secara berkala, peserta didik dapat menentukan suhu akhir es setelah waktu pemanasan tertentu.',
+      'Disajikan gambar diagram sistem pencernaan manusia bernomor 1-5, peserta didik dapat mengidentifikasi fungsi utama organ nomor 3 (lambung) dan nomor 4 (usus halus).',
     levelKognitif: 'L1',
     bobotSkor: 1,
   },
   2: {
-    elemen: 'Bilangan',
+    elemen: 'Bab 1: Pencernaan & Gizi',
     tujuanPembelajaran:
-      'Peserta didik dapat menyelesaikan masalah penalaran yang melibatkan operasi hitung campuran pecahan dan bilangan cacah.',
+      'Memahami, menganalisis, dan menerapkan konsep sistem pencernaan serta pola hidup sehat.',
     indikatorSoal:
-      'Disajikan cerita kontekstual panen beras (kuintal) yang dijual dan dibagi rata ke beberapa tetangga, peserta didik dapat menghitung berat beras yang diterima tiap orang dalam satuan kilogram.',
-    levelKognitif: 'L2',
+      'Peserta didik dapat mengurutkan jalur perjalanan makanan pada sistem pencernaan manusia dari mulut hingga anus secara tepat.',
+    levelKognitif: 'L1',
     bobotSkor: 1,
   },
   3: {
-    elemen: 'Bilangan',
+    elemen: 'Bab 1: Pencernaan & Gizi',
     tujuanPembelajaran:
-      'Peserta didik dapat mengaplikasikan konsep Faktor Persekutuan Terbesar (FPB) untuk menyelesaikan permasalahan pembagian barang secara merata.',
+      'Memahami, menganalisis, dan menerapkan konsep sistem pencernaan serta pola hidup sehat.',
     indikatorSoal:
-      'Disajikan data tiga jenis perlengkapan belajar yang akan dibagikan sama banyak kepada siswa berprestasi, peserta didik dapat menentukan jumlah siswa terbanyak penerima dan jumlah pensil yang didapat masing-masing siswa.',
+      'Disajikan ilustrasi kondisi anak dalam masa pertumbuhan dan pemulihan luka, peserta didik dapat menentukan jenis zat gizi (protein) yang paling dibutuhkan.',
     levelKognitif: 'L2',
     bobotSkor: 1,
   },
   4: {
-    elemen: 'Bilangan',
+    elemen: 'Bab 1: Pencernaan & Gizi',
     tujuanPembelajaran:
-      'Peserta didik dapat menerapkan konsep Kelipatan Persekutuan Terkecil (KPK) dalam menentukan jadwal atau waktu kejadian bersamaan.',
+      'Memahami, menganalisis, dan menerapkan konsep sistem pencernaan serta pola hidup sehat.',
     indikatorSoal:
-      'Disajikan interval waktu berbunyinya tiga lonceng pos kamling pada pukul tertentu, peserta didik dapat menentukan waktu saat ketiga lonceng berbunyi bersamaan kembali untuk kedua kalinya.',
-    levelKognitif: 'L1',
-    bobotSkor: 1,
-  },
-  5: {
-    elemen: 'Aljabar',
-    tujuanPembelajaran:
-      'Peserta didik dapat memahami konsep rasio, perbandingan, dan skala pada peta atau denah.',
-    indikatorSoal:
-      'Disajikan jarak dua kota pada peta dan skala tertentu, peserta didik dapat menghitung jarak sebenarnya antara kedua kota tersebut dalam satuan kilometer.',
-    levelKognitif: 'L1',
-    bobotSkor: 1,
-  },
-  6: {
-    elemen: 'Aljabar',
-    tujuanPembelajaran:
-      'Peserta didik dapat menyelesaikan masalah proporsi dan perbandingan senilai yang berkaitan dengan selisih dan jumlah nilai.',
-    indikatorSoal:
-      'Disajikan perbandingan umur dua orang dan selisih umur mereka, peserta didik dapat menghitung jumlah umur kedua orang tersebut seluruhnya.',
-    levelKognitif: 'L2',
-    bobotSkor: 1,
-  },
-  7: {
-    elemen: 'Aljabar',
-    tujuanPembelajaran:
-      'Peserta didik dapat menganalisis permasalahan gerak lurus beraturan (kecepatan rata-rata, jarak, dan waktu) untuk kasus berpapasan.',
-    indikatorSoal:
-      'Disajikan jarak dua kota, waktu keberangkatan yang sama, dan kecepatan dua kendaraan yang berpapasan, peserta didik dapat menganalisis dan menentukan pukul berapa kedua kendaraan saling berpapasan.',
+      'Disajikan gambar piring makan bergizi seimbang (Isi Piringku), peserta didik dapat menganalisis kekurangan zat gizi dari pola makan yang tidak seimbang.',
     levelKognitif: 'L3',
     bobotSkor: 1,
   },
-  8: {
-    elemen: 'Pengukuran',
+  5: {
+    elemen: 'Bab 1: Pencernaan & Gizi',
     tujuanPembelajaran:
-      'Peserta didik dapat menyelesaikan masalah yang melibatkan hubungan antara volume bangun ruang, debit aliran zat cair, dan waktu pengisian.',
+      'Memahami, menganalisis, dan menerapkan konsep sistem pencernaan serta pola hidup sehat.',
     indikatorSoal:
-      'Disajikan ukuran bak penampungan air berbentuk balok dan debit kran air pengisi, peserta didik dapat menghitung waktu yang dibutuhkan untuk mengisi bak hingga penuh.',
+      'Disajikan studi kasus kebiasaan melewatkan sarapan dan mengonsumsi makanan pedas, peserta didik dapat menganalisis gangguan pencernaan yang berisiko terjadi.',
+    levelKognitif: 'L2',
+    bobotSkor: 1,
+  },
+  6: {
+    elemen: 'Bab 1: Pencernaan & Gizi',
+    tujuanPembelajaran:
+      'Memahami, menganalisis, dan menerapkan konsep sistem pencernaan serta pola hidup sehat.',
+    indikatorSoal:
+      'Disajikan kasus keluhan sembelit pada anak, peserta didik dapat menentukan cara mengatasi dan menjaga kesehatan organ pencernaan secara tepat.',
+    levelKognitif: 'L2',
+    bobotSkor: 1,
+  },
+
+  // BAB 2 (PG: 7-12)
+  7: {
+    elemen: 'Bab 2: Sistem Pernapasan',
+    tujuanPembelajaran:
+      'Memahami, menganalisis, dan menerapkan konsep sistem pernapasan serta menjaga kualitas kesehatan pernapasan.',
+    indikatorSoal:
+      'Disajikan gambar anatomi sistem pernapasan manusia bernomor 1-5, peserta didik dapat mengidentifikasi organ nomor 1 (rongga hidung) dan nomor 5 (diafragma).',
+    levelKognitif: 'L1',
+    bobotSkor: 1,
+  },
+  8: {
+    elemen: 'Bab 2: Sistem Pernapasan',
+    tujuanPembelajaran:
+      'Memahami, menganalisis, dan menerapkan konsep sistem pernapasan serta menjaga kualitas kesehatan pernapasan.',
+    indikatorSoal:
+      'Peserta didik dapat menganalisis mekanisme masuknya udara (inspirasi) pada pernapasan perut yang melibatkan kontraksi otot diafragma.',
     levelKognitif: 'L2',
     bobotSkor: 1,
   },
   9: {
-    elemen: 'Geometri',
+    elemen: 'Bab 2: Sistem Pernapasan',
     tujuanPembelajaran:
-      'Peserta didik dapat menghitung keliling lingkaran dan mengaplikasikannya dalam pemecahan masalah lingkungan sekitar.',
+      'Memahami, menganalisis, dan menerapkan konsep sistem pernapasan serta menjaga kualitas kesehatan pernapasan.',
     indikatorSoal:
-      'Disajikan diameter sebuah taman berbentuk lingkaran yang akan dipasangi lampu penerangan dengan jarak tertentu, peserta didik dapat menentukan jumlah lampu yang dibutuhkan.',
+      'Peserta didik dapat menentukan urutan jalur perjalanan udara dari rongga hidung hingga alveolus pada paru-paru manusia.',
     levelKognitif: 'L1',
     bobotSkor: 1,
   },
   10: {
-    elemen: 'Geometri',
+    elemen: 'Bab 2: Sistem Pernapasan',
     tujuanPembelajaran:
-      'Peserta didik dapat menghitung luas gabungan bangun datar (persegi panjang dan lingkaran).',
+      'Memahami, menganalisis, dan menerapkan konsep sistem pernapasan serta menjaga kualitas kesehatan pernapasan.',
     indikatorSoal:
-      'Disajikan gambar bangun datar gabungan antara persegi panjang dan setengah lingkaran berimpit, peserta didik dapat menghitung luas gabungan bangun tersebut.',
+      'Disajikan gejala sesak napas disertai bunyi mengi akibat paparan debu/udara dingin, peserta didik dapat mengidentifikasi penyakit asma.',
     levelKognitif: 'L2',
     bobotSkor: 1,
   },
   11: {
-    elemen: 'Pengukuran',
+    elemen: 'Bab 2: Sistem Pernapasan',
     tujuanPembelajaran:
-      'Peserta didik dapat menganalisis dan menghitung volume bangun ruang tabung serta konversi volume ke satuan liter.',
+      'Memahami, menganalisis, dan menerapkan konsep sistem pernapasan serta menjaga kualitas kesehatan pernapasan.',
     indikatorSoal:
-      'Disajikan dimensi drum penampung minyak berbentuk tabung yang telah terisi sebagian (pecahan), peserta didik dapat menganalisis sisa volume minyak yang dibutuhkan hingga penuh dalam satuan liter.',
+      'Disajikan gambar perbandingan lingkungan udara bersih dan udara tercemar asap pabrik/kendaraan, peserta didik dapat menganalisis dampak polusi udara terhadap kesehatan pernapasan.',
     levelKognitif: 'L3',
     bobotSkor: 1,
   },
   12: {
-    elemen: 'Geometri',
+    elemen: 'Bab 2: Sistem Pernapasan',
     tujuanPembelajaran:
-      'Peserta didik dapat menghitung luas permukaan bangun ruang kubus dalam konteks pemecahan masalah sehari-hari.',
+      'Memahami, menganalisis, dan menerapkan konsep sistem pernapasan serta menjaga kualitas kesehatan pernapasan.',
     indikatorSoal:
-      'Disajikan ukuran rusuk sebuah kotak kado berbentuk kubus, peserta didik dapat menentukan luas minimal kertas kado yang dibutuhkan untuk menutup seluruh permukaannya.',
+      'Peserta didik dapat menentukan tindakan yang tepat untuk menjaga kebersihan udara dan kesehatan organ pernapasan di lingkungan sekolah.',
     levelKognitif: 'L1',
     bobotSkor: 1,
   },
+
+  // BAB 3 (PG: 13-18)
   13: {
-    elemen: 'Analisis Data dan Peluang',
+    elemen: 'Bab 3: Jejak Sang Pahlawan',
     tujuanPembelajaran:
-      'Peserta didik dapat menentukan nilai rata-rata (mean) dari sekumpulan data tunggal.',
+      'Memahami, menganalisis, dan merefleksikan peristiwa sejarah serta nilai perjuangan pahlawan.',
     indikatorSoal:
-      'Disajikan sekumpulan data perolehan nilai ulangan harian siswa, peserta didik dapat menghitung nilai rata-rata (mean) dari data tersebut.',
+      'Peserta didik dapat menjelaskan dampak kebijakan tanam paksa (Cultuurstelsel) terhadap kondisi kehidupan masyarakat Indonesia pada masa penjajahan.',
     levelKognitif: 'L1',
     bobotSkor: 1,
   },
   14: {
-    elemen: 'Analisis Data dan Peluang',
+    elemen: 'Bab 3: Jejak Sang Pahlawan',
     tujuanPembelajaran:
-      'Peserta didik dapat menganalisis data tunggal untuk menentukan nilai median (nilai tengah) dan modus.',
+      'Memahami, menganalisis, dan merefleksikan peristiwa sejarah serta nilai perjuangan pahlawan.',
     indikatorSoal:
-      'Disajikan data berat badan sejumlah siswa peserta cerdas cermat yang belum berurutan, peserta didik dapat menentukan nilai median dan modus secara tepat.',
+      'Disajikan ilustrasi perjuangan rakyat Indonesia, peserta didik dapat mengidentifikasi bentuk perlawanan melalui organisasi pergerakan nasional, pendidikan, dan diplomasi.',
     levelKognitif: 'L2',
     bobotSkor: 1,
   },
   15: {
-    elemen: 'Aljabar',
+    elemen: 'Bab 3: Jejak Sang Pahlawan',
     tujuanPembelajaran:
-      'Peserta didik dapat menyelesaikan masalah aritmatika sosial yang berkaitan dengan persentase diskon (potongan harga).',
+      'Memahami, menganalisis, dan merefleksikan peristiwa sejarah serta nilai perjuangan pahlawan.',
     indikatorSoal:
-      'Disajikan harga barang sebelum diskon dan persentase potongan harga belanja pendidikan, peserta didik dapat menghitung jumlah uang yang harus dibayar oleh pembeli.',
+      'Peserta didik dapat menentukan pasangan yang tepat antara tokoh pahlawan nasional/daerah dengan peristiwa dan wilayah perjuangannya.',
     levelKognitif: 'L1',
     bobotSkor: 1,
   },
   16: {
-    elemen: 'Analisis Data dan Peluang',
+    elemen: 'Bab 3: Jejak Sang Pahlawan',
     tujuanPembelajaran:
-      'Peserta didik dapat menyajikan dan menafsirkan data dalam bentuk diagram lingkaran.',
+      'Memahami, menganalisis, dan merefleksikan peristiwa sejarah serta nilai perjuangan pahlawan.',
     indikatorSoal:
-      'Disajikan diagram lingkaran persentase pilihan kegiatan ekstrakurikuler beserta jumlah total siswa, peserta didik dapat menghitung banyak siswa yang memilih ekstrakurikuler tertentu.',
-    levelKognitif: 'L2',
+      'Disajikan narasi peristiwa heroik pertempuran 10 November 1945 di Surabaya, peserta didik dapat mengaitkannya dengan peringatan Hari Pahlawan.',
+    levelKognitif: 'L1',
     bobotSkor: 1,
   },
   17: {
-    elemen: 'Bilangan',
+    elemen: 'Bab 3: Jejak Sang Pahlawan',
     tujuanPembelajaran:
-      'Peserta didik dapat menentukan akar pangkat tiga dari bilangan kubik yang berkaitan dengan volume kubus.',
+      'Memahami, menganalisis, dan merefleksikan peristiwa sejarah serta nilai perjuangan pahlawan.',
     indikatorSoal:
-      'Disajikan volume bak penampungan air berbentuk kubus, peserta didik dapat menentukan panjang rusuk bagian dalam bak tersebut.',
-    levelKognitif: 'L2',
+      'Disajikan analisis kegagalan perlawanan daerah sebelum 1908 akibat politik adu domba, peserta didik dapat menyimpulkan pentingnya nilai persatuan dan kesatuan.',
+    levelKognitif: 'L3',
     bobotSkor: 1,
   },
   18: {
-    elemen: 'Pengukuran',
+    elemen: 'Bab 3: Jejak Sang Pahlawan',
     tujuanPembelajaran:
-      'Peserta didik dapat mengonversi satuan kecepatan dari km/menit ke meter per detik (m/s).',
+      'Memahami, menganalisis, dan merefleksikan peristiwa sejarah serta nilai perjuangan pahlawan.',
     indikatorSoal:
-      'Disajikan jarak tempuh dan waktu seorang pelari maraton cilik, peserta didik dapat menghitung dan mengonversi kecepatan rata-rata ke satuan meter/detik.',
+      'Peserta didik dapat memilih contoh penerapan nilai pantang menyerah dan cinta tanah air dalam kehidupan sehari-hari sebagai pelajar.',
     levelKognitif: 'L2',
     bobotSkor: 1,
   },
+
+  // PILIHAN GANDA KOMPLEKS (19-21)
   19: {
-    elemen: 'Geometri',
+    elemen: 'Bab 1: Pencernaan & Gizi',
     tujuanPembelajaran:
-      'Peserta didik dapat mengidentifikasi dan membedakan sifat-sifat bangun datar layang-layang melalui pilihan berganda kompleks.',
+      'Memahami, menganalisis, dan menerapkan konsep sistem pencernaan serta pola hidup sehat.',
     indikatorSoal:
-      'Disajikan tiga deskripsi sifat geometris bangun datar layang-layang, peserta didik dapat memilih semua pernyataan yang benar (lebih dari satu jawaban benar).',
+      'Disajikan gambar diagram sistem pencernaan manusia, peserta didik dapat memilih lebih dari satu pernyataan yang benar mengenai fungsi mulut, kerongkongan, dan usus besar.',
     levelKognitif: 'L2',
     bobotSkor: 1,
   },
   20: {
-    elemen: 'Geometri',
+    elemen: 'Bab 2: Sistem Pernapasan',
     tujuanPembelajaran:
-      'Peserta didik dapat menganalisis luas, keliling, dan estimasi nilai ekonomis lahan kebun berbentuk bangun datar.',
+      'Memahami, menganalisis, dan menerapkan konsep sistem pernapasan serta menjaga kualitas kesehatan pernapasan.',
     indikatorSoal:
-      'Disajikan ukuran kebun berbentuk persegi panjang dan harga jual per meter persegi, peserta didik dapat mengevaluasi dan memilih semua pernyataan yang bernilai benar.',
-    levelKognitif: 'L3',
-    bobotSkor: 1,
-  },
-  21: {
-    elemen: 'Bilangan',
-    tujuanPembelajaran:
-      'Peserta didik dapat menerapkan operasi hitung campuran bilangan desimal dan satuan berat dalam belanja sehari-hari.',
-    indikatorSoal:
-      'Disajikan data belanja kebutuhan pokok beras dan gula pasir, peserta didik dapat memverifikasi kebenaran hitungan berat tiap jenis barang dan total berat belanjaan.',
+      'Disajikan gambar perbandingan kualitas udara, peserta didik dapat memilih semua tindakan yang benar untuk melindungi organ pernapasan.',
     levelKognitif: 'L2',
     bobotSkor: 1,
   },
-  22: {
-    elemen: 'Aljabar',
+  21: {
+    elemen: 'Bab 3: Jejak Sang Pahlawan',
     tujuanPembelajaran:
-      'Peserta didik dapat menganalisis konsep aritmatika sosial mengenai bruto, neto, tara, modal, harga jual, dan keuntungan.',
+      'Memahami, menganalisis, dan merefleksikan peristiwa sejarah serta nilai perjuangan pahlawan.',
     indikatorSoal:
-      'Disajikan narasi pembelian buah dalam keranjang berkategori bruto dan tara, peserta didik dapat menentukan nilai kebenaran (Benar/Salah) pada 3 pernyataan terkait neto, modal, dan laba.',
+      'Disajikan ilustrasi perjuangan rakyat Indonesia, peserta didik dapat mengevaluasi dan memilih nilai-nilai kepahlawanan yang patut diteladani.',
     levelKognitif: 'L3',
     bobotSkor: 1,
   },
-  23: {
-    elemen: 'Analisis Data dan Peluang',
+
+  // PILIHAN GANDA KOMPLEKS KATEGORI (22-30)
+  22: {
+    elemen: 'Bab 1: Pencernaan & Gizi',
     tujuanPembelajaran:
-      'Peserta didik dapat menganalisis tabel distribusi frekuensi data tunggal dan menghubungkannya dengan kriteria ketercapaian (KKTP).',
+      'Memahami, menganalisis, dan menerapkan konsep sistem pencernaan serta pola hidup sehat.',
     indikatorSoal:
-      'Disajikan data frekuensi nilai ulangan dan batas KKTP sekolah, peserta didik dapat menentukan nilai kebenaran (Benar/Salah) pada 3 pernyataan terkait modus, jumlah siswa tuntas, dan persentase remedial.',
+      'Disajikan gambar Isi Piringku, peserta didik dapat menentukan kebenaran (Benar/Salah) pada 3 pernyataan terkait fungsi karbohidrat, protein, dan proporsi gizi seimbang.',
+    levelKognitif: 'L2',
+    bobotSkor: 1,
+  },
+  23: {
+    elemen: 'Bab 1: Pencernaan & Gizi',
+    tujuanPembelajaran:
+      'Memahami, menganalisis, dan menerapkan konsep sistem pencernaan serta pola hidup sehat.',
+    indikatorSoal:
+      'Disajikan kasus gangguan pencernaan diare, peserta didik dapat menilai kebenaran (Benar/Salah) pada 3 pernyataan tentang penyebab, bahaya dehidrasi, dan pencegahannya.',
     levelKognitif: 'L2',
     bobotSkor: 1,
   },
   24: {
-    elemen: 'Pengukuran',
+    elemen: 'Bab 1: Pencernaan & Gizi',
     tujuanPembelajaran:
-      'Peserta didik dapat menganalisis volume balok dan kapasitas penampungan air dalam satuan liter.',
+      'Memahami, menganalisis, dan menerapkan konsep sistem pencernaan serta pola hidup sehat.',
     indikatorSoal:
-      'Disajikan dimensi bak penampungan air balok dan kondisi keterisian 3/4 kapasitas, peserta didik dapat menentukan kebenaran (Benar/Salah) untuk volume penuh, volume isi, dan volume air yang perlu ditambahkan.',
-    levelKognitif: 'L2',
+      'Peserta didik dapat menganalisis dan menentukan kebenaran (Benar/Salah) 3 pernyataan terkait fungsi HCl lambung, gerak peristaltik, dan lokasi penyerapan sari makanan.',
+    levelKognitif: 'L3',
     bobotSkor: 1,
   },
   25: {
-    elemen: 'Geometri',
+    elemen: 'Bab 2: Sistem Pernapasan',
     tujuanPembelajaran:
-      'Peserta didik dapat menerapkan rumus keliling dan luas lingkaran pada objek kontekstual meja hias bundar.',
+      'Memahami, menganalisis, dan menerapkan konsep sistem pernapasan serta menjaga kualitas kesehatan pernapasan.',
     indikatorSoal:
-      'Disajikan diameter meja bundar, peserta didik dapat mengevaluasi kebenaran (Benar/Salah) untuk panjang jari-jari, panjang renda hias keliling, dan luas permukaan kaca penutup.',
+      'Disajikan gambar sistem pernapasan manusia, peserta didik dapat menentukan kebenaran (Benar/Salah) pada 3 pernyataan terkait rongga hidung, alveolus paru-paru, dan mekanisme ekspirasi diafragma.',
     levelKognitif: 'L2',
     bobotSkor: 1,
   },
   26: {
-    elemen: 'Aljabar',
+    elemen: 'Bab 2: Sistem Pernapasan',
     tujuanPembelajaran:
-      'Peserta didik dapat menganalisis skala denah untuk menentukan ukuran panjang, lebar, dan luas sebenarnya.',
+      'Memahami, menganalisis, dan menerapkan konsep sistem pernapasan serta menjaga kualitas kesehatan pernapasan.',
     indikatorSoal:
-      'Disajikan denah lapangan upacara sekolah dengan skala 1 : 400, peserta didik dapat menilai kebenaran (Benar/Salah) dari pernyataan panjang sebenarnya, lebar sebenarnya, dan luas sebenarnya.',
+      'Peserta didik dapat menilai kebenaran (Benar/Salah) pada 3 pernyataan mengenai penyakit sistem pernapasan (TBC, influenza, dan pneumonia).',
     levelKognitif: 'L2',
     bobotSkor: 1,
   },
   27: {
-    elemen: 'Pengukuran',
+    elemen: 'Bab 2: Sistem Pernapasan',
     tujuanPembelajaran:
-      'Peserta didik dapat menganalisis permasalahan jarak, waktu tempuh total, waktu istirahat, dan kecepatan gerak murni bus pariwisata.',
+      'Memahami, menganalisis, dan menerapkan konsep sistem pernapasan serta menjaga kualitas kesehatan pernapasan.',
     indikatorSoal:
-      'Disajikan jadwal keberangkatan bus karya wisata, waktu tiba, jarak tempuh, dan durasi istirahat, peserta didik dapat memverifikasi nilai kebenaran (Benar/Salah) pada total waktu, waktu gerak murni, dan kecepatan rata-rata saat melaju.',
-    levelKognitif: 'L3',
-    bobotSkor: 1,
-  },
-  28: {
-    elemen: 'Bilangan',
-    tujuanPembelajaran:
-      'Peserta didik dapat menyelesaikan operasi persentase dan pecahan terhadap kuantitas barang persediaan awal.',
-    indikatorSoal:
-      'Disajikan persediaan awal buku tulis di koperasi dan data penjualan hari Senin (persen) dan Selasa (pecahan), peserta didik dapat menentukan kebenaran (Benar/Salah) dari 3 pernyataan penjualan dan sisa stok.',
+      'Peserta didik dapat mengevaluasi kebenaran (Benar/Salah) pada 3 pernyataan kebiasaan menjaga kesehatan organ pernapasan.',
     levelKognitif: 'L1',
     bobotSkor: 1,
   },
-  29: {
-    elemen: 'Bilangan',
+  28: {
+    elemen: 'Bab 3: Jejak Sang Pahlawan',
     tujuanPembelajaran:
-      'Peserta didik dapat mengaplikasikan FPB dalam menentukan paket hadiah dan rincian isi barang per regu penerima.',
+      'Memahami, menganalisis, dan merefleksikan peristiwa sejarah serta nilai perjuangan pahlawan.',
     indikatorSoal:
-      'Disajikan jumlah tiga perlengkapan hadiah lomba kebersihan kelas, peserta didik dapat mengevaluasi kebenaran (Benar/Salah) nilai FPB, banyak regu terbanyak penerima, dan komposisi isi barang per regu.',
+      'Disajikan ilustrasi sejarah perjuangan, peserta didik dapat menentukan kebenaran (Benar/Salah) pada 3 pernyataan mengenai Romusha, Perang Diponegoro, dan kerja rodi Jalan Raya Pos.',
     levelKognitif: 'L2',
     bobotSkor: 1,
   },
-  30: {
-    elemen: 'Geometri',
+  29: {
+    elemen: 'Bab 3: Jejak Sang Pahlawan',
     tujuanPembelajaran:
-      'Peserta didik dapat menganalisis koordinat Kartesius 4 titik untuk mengidentifikasi bentuk bangun datar, keliling, dan luas.',
+      'Memahami, menganalisis, dan merefleksikan peristiwa sejarah serta nilai perjuangan pahlawan.',
     indikatorSoal:
-      'Disajikan 4 titik koordinat bidang Kartesius yang saling dihubungkan, peserta didik dapat menganalisis dan menentukan kebenaran (Benar/Salah) dari jenis bangun datar yang terbentuk, keliling, dan luasnya.',
+      'Peserta didik dapat menilai kebenaran (Benar/Salah) pada 3 pernyataan tentang peran Ki Hajar Dewantara, R.A. Kartini, dan Tuanku Imam Bonjol.',
+    levelKognitif: 'L1',
+    bobotSkor: 1,
+  },
+  30: {
+    elemen: 'Bab 3: Jejak Sang Pahlawan',
+    tujuanPembelajaran:
+      'Memahami, menganalisis, dan merefleksikan peristiwa sejarah serta nilai perjuangan pahlawan.',
+    indikatorSoal:
+      'Peserta didik dapat merefleksikan dan menentukan kebenaran (Benar/Salah) pada 3 pernyataan penerapan nilai kepahlawanan dalam kehidupan sehari-hari.',
     levelKognitif: 'L3',
     bobotSkor: 1,
   },
@@ -362,7 +372,7 @@ export function getQuestionBlueprint(q: Question, index: number): QuestionBluepr
     q.tujuanPembelajaran ||
     (def
       ? def.tujuanPembelajaran
-      : `Peserta didik mampu menerapkan konsep materi ${q.topic} dalam menyelesaikan permasalahan matematika.`);
+      : `Peserta didik mampu memahami, menganalisis, dan menerapkan konsep materi ${q.topic} dalam mata pelajaran IPAS.`);
 
   const indikatorSoal =
     q.indikatorSoal ||
@@ -390,22 +400,16 @@ export function getQuestionBlueprint(q: Question, index: number): QuestionBluepr
 
 function inferElemenFromTopic(topic: string): string {
   const t = topic.toLowerCase();
-  if (t.includes('bilangan') || t.includes('pecahan') || t.includes('fpb') || t.includes('kpk') || t.includes('pangkat')) {
-    return 'Bilangan';
+  if (t.includes('bab 1') || t.includes('pencernaan') || t.includes('gizi') || t.includes('makanan')) {
+    return 'Bab 1: Pencernaan & Gizi';
   }
-  if (t.includes('lingkaran') || t.includes('bangun datar') || t.includes('kubus') || t.includes('geometri') || t.includes('layang')) {
-    return 'Geometri';
+  if (t.includes('bab 2') || t.includes('pernapasan') || t.includes('udara') || t.includes('paru')) {
+    return 'Bab 2: Sistem Pernapasan';
   }
-  if (t.includes('debit') || t.includes('volume') || t.includes('kecepatan') || t.includes('jarak')) {
-    return 'Pengukuran';
+  if (t.includes('bab 3') || t.includes('pahlawan') || t.includes('penjajahan') || t.includes('perjuangan')) {
+    return 'Bab 3: Jejak Sang Pahlawan';
   }
-  if (t.includes('skala') || t.includes('perbandingan') || t.includes('diskon') || t.includes('bruto') || t.includes('aritmatika')) {
-    return 'Aljabar';
-  }
-  if (t.includes('statistika') || t.includes('diagram') || t.includes('mean') || t.includes('modus') || t.includes('median')) {
-    return 'Analisis Data dan Peluang';
-  }
-  return 'Bilangan';
+  return 'Bab 1: Pencernaan & Gizi';
 }
 
 function inferLevelFromDifficulty(diff: Difficulty): CognitiveLevel {

@@ -1182,7 +1182,7 @@ export const Stage4TeacherPanel: React.FC<Stage4TeacherPanelProps> = ({
           <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-slate-100 gap-3">
             <div>
               <h3 className="text-base font-bold text-slate-900">
-                Struktur &amp; Bank Soal Matematika TKA ({questions.length} Butir)
+                Struktur &amp; Bank Soal IPAS ({questions.length} Butir)
               </h3>
               <p className="text-xs text-slate-500">
                 18 Soal Pilihan Ganda, 3 Soal Pilihan Ganda Kompleks, 9 Soal PGK Kategori
@@ -1258,6 +1258,20 @@ export const Stage4TeacherPanel: React.FC<Stage4TeacherPanelProps> = ({
                     </button>
                   </div>
                 </div>
+
+                {q.imageUrl && (
+                  <div className="flex items-center gap-3 p-2.5 bg-white rounded-lg border border-slate-200">
+                    <img
+                      src={q.imageUrl}
+                      alt={q.imageAlt || `Ilustrasi soal ${q.id}`}
+                      referrerPolicy="no-referrer"
+                      className="h-24 w-auto rounded object-contain border border-slate-100"
+                    />
+                    {q.imageCaption && (
+                      <span className="text-[11px] font-medium text-slate-500">{q.imageCaption}</span>
+                    )}
+                  </div>
+                )}
 
                 <p className="text-xs sm:text-sm text-slate-900 font-medium whitespace-pre-line">
                   {q.text}
